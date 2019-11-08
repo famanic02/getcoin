@@ -1,0 +1,167 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>GetCoins || Feedbacks</title>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/ico" href="/images/favicon.ico"/>
+
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="/css/AdminLTE.min.css">
+
+        <!-- AdminLTE Skins -->
+        <link rel="stylesheet" href="/css/skin-blue.min.css">
+
+        <!-- DataTables -->
+        <link rel="stylesheet" href="/plugins/datatables/dataTables.bootstrap.css">
+
+        <!-- Alert -->
+        <link rel="stylesheet" href="/plugins/alertifyjs/css/alertify.min.css">
+        <link rel="stylesheet" href="/plugins/alertifyjs/css/themes/default.min.css">
+        <script src="/plugins/alertifyjs/alertify.min.js"></script>
+        <script>
+            function showAlert(body) {
+
+                alertify.set('notifier', 'position', 'top-bottom');
+                alertify.warning(body).dismissOthers();
+            }
+        </script>
+    </head>
+
+    <body class="hold-transition skin-blue layout-top-nav">
+
+    <div class="loader">
+    </div>
+    <!-- ./loader -->
+
+    <div class="wrapper">
+
+        <%- include header.ejs %>
+
+        <!-- Full Width Column -->
+        <div class="content-wrapper">
+            <div class="container">
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box box-primary">
+
+                                <div class="box-header">
+                                </div>
+                                <!-- /.box-header -->
+
+                                <div class="box-body">
+                                    <div class="table-responsive">
+                                        <table id="feedbacks" class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th> Feedbacks </th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <% for(var i = 0; i < feeds['feedbacks'].length; i++) { %>
+                                                <tr>
+                                                    <td>
+                                                        <div class="post">
+                                                            <div class="user-block">
+                                                                <img class="img-circle img-bordered-sm" src="<%= feeds['feedbacks'][i]['user'].image %>" alt="Image">
+                                                                <span class="username">
+                                                                    <a class="link-black"> <%= feeds['feedbacks'][i]['user'].name %> </a>
+                                                                </span>
+
+                                                                <span class="description">
+                                                                    Email - <%= feeds['feedbacks'][i]['user'].email %>
+                                                                    <br/>
+                                                                    Mobile - <%= feeds['feedbacks'][i]['user'].mobile %>
+                                                                    <br/>
+                                                                    <%= feeds['feedbacks'][i]['details'].feed %>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <% } %>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- /.box-body -->
+                            </div>
+                            <!-- /.box -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.content-wrapper -->
+
+        <%- include footer.ejs %>
+
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- Required js Scripts -->
+    <!-- jQuery 2.1.4 -->
+    <script src="/js/jQuery-2.1.4.min.js"></script>
+
+    <!-- Bootstrap 3.3.5 -->
+    <script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- DataTables -->
+    <script src="/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="/plugins/datatables/dataTables.bootstrap.min.js"></script>
+
+    <!-- SlimScroll -->
+    <script src="/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+
+    <!-- FastClick -->
+    <script src="/plugins/fastclick/fastclick.min.js"></script>
+
+    <!-- AdminLTE App -->
+    <!--<script src="/js/app.min.js"></script>-->
+
+    <!-- Page Script -->
+    <script>
+        $(function () {
+
+            $('#feedbacks').DataTable({
+
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": false,
+                "info": true,
+                "autoWidth": true
+            });
+        });
+    </script>
+
+    <!-- Loader -->
+    <script>
+        $(window).load(function() {
+
+            $(".loader").fadeOut("slow");
+        })
+    </script>
+    </body>
+</html>

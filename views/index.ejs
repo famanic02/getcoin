@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>GetCoins || Dashboard</title>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/ico" href="/images/favicon.ico"/>
+
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="/css/AdminLTE.min.css">
+
+        <!-- AdminLTE Skins -->
+        <link rel="stylesheet" href="/css/skin-blue.min.css">
+    </head>
+
+    <body class="hold-transition skin-blue layout-top-nav">
+
+    <div class="loader">
+    </div>
+    <!-- ./loader -->
+
+    <div class="wrapper">
+
+        <%- include header.ejs %>
+
+        <!-- Full Width Column -->
+        <div class="content-wrapper">
+            <div class="container">
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Description</h3>
+                        </div>
+                        <div class="box-body">
+                            Get Coins is a mobile cross-platform application that allows users to exchange FIAT for cryptocurrencies and viceversa
+                            using the nearby function like local bitcoins you can see the offers around you and pick your one.
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.content-wrapper -->
+
+        <%- include footer.ejs %>
+
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- Required js Scripts -->
+    <!-- jQuery 2.1.4 -->
+    <script src="/js/jQuery-2.1.4.min.js"></script>
+
+    <!-- Bootstrap 3.3.5 -->
+    <script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- DataTables -->
+    <script src="/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="/plugins/datatables/dataTables.bootstrap.min.js"></script>
+
+    <!-- SlimScroll -->
+    <script src="/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+
+    <!-- FastClick -->
+    <script src="/plugins/fastclick/fastclick.min.js"></script>
+
+    <!-- AdminLTE App -->
+    <!--<script src="/js/app.min.js"></script>-->
+
+    <!-- Loader -->
+    <script>
+        $(window).load(function() {
+
+            $(".loader").fadeOut("slow");
+        })
+    </script>
+	</body>
+</html>

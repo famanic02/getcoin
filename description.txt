@@ -1,0 +1,2 @@
+Get Coins is a mobile cross-platform application that allows users to exchange FIAT for cryptocurrencies and viceversa
+using the nearby function like localbitcoins you can see the offers around you and pick your one.
